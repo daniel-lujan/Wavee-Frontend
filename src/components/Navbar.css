@@ -1,0 +1,30 @@
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+  padding: 10px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  z-index: 4;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.github-icon {
+  color: white;
+  transition: all 0.2s;
+}
+
+.github-icon:hover {
+  color: #c9c9c9;
+}

@@ -1,0 +1,18 @@
+export const SONGS = [
+  { id: 0, title: "La Noche", artist: "Blessd" },
+  { id: 1, title: "Triste", artist: "Bryant Myers" },
+  { id: 2, title: "Reina", artist: "C.R.O" },
+  { id: 3, title: "Khabib", artist: "Central Cee" },
+  { id: 4, title: "aPoLLo13", artist: "Duki" },
+  { id: 5, title: "GIVENCHY", artist: "Duki" },
+  { id: 6, title: "Malbec", artist: "Duki" },
+  { id: 7, title: "All of Me", artist: "John Legend" },
+  { id: 8, title: "Wishing Well", artist: "Juice WRLD" },
+  { id: 9, title: "A tus pies", artist: "Lit Killah" },
+  { id: 10, title: "Forever Alone", artist: "Paulo Londra" },
+  { id: 11, title: "Party en el Barrio", artist: "Paulo Londra" },
+  { id: 12, title: "RAPSTAR", artist: "Polo G" },
+  { id: 13, title: "A MÍ", artist: "Rels B" },
+  { id: 14, title: "Si Te Lastimé", artist: "Seven Kayne" },
+  { id: 15, title: "The Devil In I", artist: "Slipknot" },
+];

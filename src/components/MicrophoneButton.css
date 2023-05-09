@@ -1,0 +1,85 @@
+:root {
+  --mic-color1: #1c084f;
+  --mic-color2: #2f1e5f;
+}
+
+.mic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.mic:hover {
+  cursor: pointer;
+}
+
+.mic:hover::after {
+  background-color: #3b09b9;
+}
+
+.mic::before,
+.mic::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  z-index: 2;
+  box-shadow: 0 0 20px 20px var(--mic-color1);
+  transition: all 0.3s ease 0s;
+}
+.mic::before {
+  width: 160px;
+  height: 160px;
+  background-color: var(--mic-color1);
+}
+.mic::after {
+  width: 110px;
+  height: 110px;
+  background-color: var(--mic-color2);
+  animation: circle-size 0.8s linear infinite alternate;
+}
+
+.mic-icon {
+  position: relative;
+  z-index: 3;
+}
+
+.mic-shadow {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  z-index: 1;
+  box-shadow: 10px -55px 30px 15px #823ca6, 24px -10px 47px 10px #aab3d2,
+    -21px -25px 97px 10px #5acee3, 51px 5px 17px 10px #1b7d8f,
+    3px 2px 77px 10px #f30bf5;
+  animation: shadow-rotate 1.5s linear infinite;
+  transform-origin: center;
+  transition: all 0.3s ease 0s;
+}
+
+@keyframes circle-size {
+  from {
+    width: 130px;
+    height: 130px;
+  }
+  to {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@keyframes shadow-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
