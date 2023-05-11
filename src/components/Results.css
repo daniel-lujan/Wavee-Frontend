@@ -1,0 +1,28 @@
+div.results-container {
+  position: relative;
+  background-color: var(--color2);
+  border-radius: 15px;
+  z-index: 11;
+  padding: 30px 30px;
+  width: 500px;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+div.results-container svg.close-button {
+  position: absolute;
+  right: 28px;
+  top: 38px;
+  fill: var(--color1);
+  transition: 0.25s;
+}
+
+svg.close-button {
+  transition: all 0.25s ease 0s;
+}
+
+svg.close-button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: var(--spotify-color);
+}

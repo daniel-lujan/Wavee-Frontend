@@ -1,9 +1,30 @@
-export async function sendAudioQuery({ blob }) {
+export async function sendAudioQuery({ blob, blobCleanerCallback }) {
   const formData = new FormData();
   formData.append("audio", blob, "audio.wav");
+
+  try {
+    blobCleanerCallback();
+  } catch {}
+
   const response = await fetch("http://localhost:5000/query-song", {
     method: "POST",
     body: formData,
   });
-  return response.json();
+
+  if (response.ok) {
+    const data = await response.json();
+
+    let songs = [];
+    for (var song in data) {
+      songs.push([song, data[song]]);
+    }
+
+    songs.sort(function (a, b) {
+      return b[1] - a[1];
+    });
+
+    return songs;
+  } else {
+    throw new Error("Error sending audio query");
+  }
 }

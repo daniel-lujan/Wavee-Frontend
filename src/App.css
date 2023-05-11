@@ -3,8 +3,11 @@
 :root {
   --background-color: #171717;
   --spotify-color: #1db954;
-  --color1: #5acee3;
+  --spotify-dark-color: #06491e;
   --remove-color: #c00060;
+  --color1: #5acee3;
+  --color2: #f3f3f3;
+  --color3: #666666;
 }
 
 * {
@@ -36,6 +39,10 @@ body {
   justify-content: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 .status {
   position: relative;
   bottom: 180px;
@@ -51,6 +58,18 @@ div.main {
   top: 0;
   height: 100%;
   width: 100%;
+}
+
+div.modal-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
 }
 
 button {
@@ -124,6 +143,10 @@ button.clear-button:hover {
 
 .green {
   color: var(--spotify-color);
+}
+
+.text-light {
+  color: var(--color3);
 }
 
 ::-webkit-scrollbar {

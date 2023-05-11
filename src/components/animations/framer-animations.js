@@ -31,3 +31,19 @@ export const SLIDEUP = {
     duration: 0.2,
   },
 };
+
+export const ZOOMOUT = {
+  initial: {
+    scale: 1.4,
+  },
+  animate: {
+    scale: 1,
+  },
+  exit: {
+    scale: 1.4,
+  },
+  transition: {
+    easing: "easeInOut",
+    duration: 0.2,
+  },
+};

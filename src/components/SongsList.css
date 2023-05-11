@@ -5,7 +5,7 @@ div.songs-container {
   align-items: center;
   padding: 20px;
   border-radius: 20px;
-  background-color: rgba(243, 243, 243, 0.65);
+  background-color: var(--color2);
   width: 450px;
   max-width: 100%;
   position: relative;
@@ -13,6 +13,10 @@ div.songs-container {
   z-index: 1;
   backdrop-filter: blur(6px);
   height: fit-content;
+}
+
+div.song-record.highlight {
+  border: var(--spotify-color) 2px solid;
 }
 
 div.songs-list {
