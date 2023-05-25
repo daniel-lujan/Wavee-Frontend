@@ -2,8 +2,8 @@
   --border-size: 2px;
   --border-angle: 0turn;
 
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-image: linear-gradient(var(--color2), var(--color2)),
     conic-gradient(
       from var(--border-angle),

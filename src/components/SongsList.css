@@ -6,13 +6,14 @@ div.songs-container {
   padding: 20px;
   border-radius: 20px;
   background-color: var(--color2);
-  width: 450px;
+  width: 550px;
   max-width: 100%;
   position: relative;
   top: 95%;
   z-index: 1;
   backdrop-filter: blur(6px);
   height: fit-content;
+  max-height: 90%;
 }
 
 div.song-record.highlight {
@@ -25,10 +26,11 @@ div.songs-list {
   align-items: center;
   padding: 20px;
   border-radius: 20px;
-  gap: 24px;
-  width: 450px;
+  gap: 18px;
+  width: 100%;
   max-width: 100%;
-  max-height: 400px;
+  height: 700px;
+  max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -45,25 +47,31 @@ div.song-record {
   overflow: hidden;
   transition: 0.25s;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  min-height: 90px;
+  min-height: 70px;
+  height: 70px;
 }
 
 div.song-record p {
   margin: 0;
   padding: 0;
+  font-size: 12px;
 }
 
 div.song-content {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 img.song-cover {
   object-fit: cover;
-  width: 90px;
+  width: 70px;
   margin: -20px;
   margin-right: 0;
+}
+
+.song-info {
+  min-width: 70px;
 }
 
 svg.spotify-icon {

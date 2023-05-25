@@ -2,6 +2,7 @@ import { useState } from "react";
 import Icon from "./icons/Icon";
 import "./SongsList.css";
 import ScoreBox from "./ScoreBox";
+import ProgressBar from "./ProgressBar";
 
 const Song = ({ id, title, artist, cover, spotifyLink, score, highlight }) => {
   const [hover, setHover] = useState(false);
@@ -26,10 +27,11 @@ const Song = ({ id, title, artist, cover, spotifyLink, score, highlight }) => {
           lineHeight: 0,
           display: "flex",
           alignItems: "center",
-          gap: "20px",
+          gap: "10px",
         }}
       >
-        {score && <ScoreBox score={score} />}
+        {/* {score && <ScoreBox score={score} />} */}
+        {score && <ProgressBar percentage={score} />}
         <a
           href={spotifyLink}
           target="_blank"
@@ -39,7 +41,7 @@ const Song = ({ id, title, artist, cover, spotifyLink, score, highlight }) => {
           <Icon
             icon="spotify"
             className="spotify-icon"
-            size={48}
+            size={36}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
           />

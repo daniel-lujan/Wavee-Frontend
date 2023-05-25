@@ -19,10 +19,7 @@ function App() {
   const modalRef = useRef();
 
   const modalMethods = {
-    show: (data) => {
-      console.log("showing modal");
-      modalRef.current.show(data);
-    },
+    show: (data) => modalRef.current.show(data),
     hide: () => modalRef.current.hide(),
   };
 

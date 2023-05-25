@@ -8,6 +8,7 @@ import Icon from "../components/icons/Icon";
 import { AnimatePresence, motion } from "framer-motion";
 import { SLIDEUP } from "../components/animations/framer-animations";
 import { ModalContext } from "../components/ModalContext";
+import Timer from "../components/Timer";
 
 const Main = () => {
   async function handleMicrophoneClick() {
@@ -63,18 +64,6 @@ const Main = () => {
 
   return (
     <div className="main">
-      <button
-        style={{ position: "relative", bottom: "200px", zIndex: 1000 }}
-        onClick={() =>
-          handleResults([
-            [0, 64],
-            [1, 47],
-            [2, 4],
-          ])
-        }
-      >
-        Click
-      </button>
       <Background />
       <MicrophoneButton active={active} onClick={handleMicrophoneClick} />
       <AnimatePresence>
@@ -88,9 +77,14 @@ const Main = () => {
             exit="exit"
             transition={SLIDEUP.transition}
           >
-            GRABANDO
+            GRABANDO{" "}
+            <b className="green">
+              <Timer />
+            </b>
           </motion.h1>
         )}
+      </AnimatePresence>
+      <AnimatePresence>
         {sendAudioMutation.isLoading && (
           <motion.h1
             key="sending"
@@ -104,6 +98,8 @@ const Main = () => {
             ANALIZANDO
           </motion.h1>
         )}
+      </AnimatePresence>
+      <AnimatePresence>
         {blob && (
           <motion.div
             key="send"
@@ -116,7 +112,12 @@ const Main = () => {
           >
             <button
               className="send-button bold title"
-              onClick={() => sendAudioMutation.mutate({ blob, handleClear })}
+              onClick={() =>
+                sendAudioMutation.mutate({
+                  blob,
+                  blobCleanerCallback: handleClear,
+                })
+              }
             >
               ENVIAR
             </button>

@@ -5,7 +5,7 @@ header {
   justify-content: space-between;
   color: white;
   align-items: center;
-  padding: 10px 40px;
+  padding: 10px calc(20px + 5%);
   width: 100%;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.4);
@@ -18,13 +18,55 @@ header {
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  gap: 30px;
 }
 
-.github-icon {
+.link-icon {
   color: white;
   transition: all 0.2s;
 }
 
-.github-icon:hover {
+.link-icon:hover {
   color: #c9c9c9;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 90px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  width: 200px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 4;
+  color: white;
+}
+
+.menu.repositories {
+  right: calc(10px + 5%);
+}
+
+.menu.bibliography {
+  right: min(calc(75px + 5%), calc(100% - 300px));
+  width: 300px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 12px;
 }

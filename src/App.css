@@ -4,6 +4,7 @@
   --background-color: #171717;
   --spotify-color: #1db954;
   --spotify-dark-color: #06491e;
+  --spotify-light-color: #14ff67;
   --remove-color: #c00060;
   --color1: #5acee3;
   --color2: #f3f3f3;
@@ -90,22 +91,14 @@ button:hover {
 
 div.send-button {
   display: flex;
-  position: relative;
-  top: 180px;
+  position: absolute;
+  bottom: 20%;
   align-items: center;
   height: 50px;
 }
 
 button.send-button {
-  border-color: var(--color1);
-  color: var(--color1);
   height: 100%;
-}
-
-button.send-button:hover {
-  background-color: var(--color1);
-  color: white;
-  box-shadow: 0 0.5em 0.5em -0.4em var(--color1);
 }
 
 button.clear-button {
@@ -119,6 +112,30 @@ button.clear-button:hover {
   background-color: var(--remove-color);
   color: white;
   box-shadow: 0 0.5em 0.5em -0.4em var(--remove-color);
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+}
+
+a.highlight::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--spotify-color);
+  transition: width 0.3s;
+}
+
+a.highlight:hover::after {
+  width: 100%;
+  transition: width 0.3s;
 }
 
 .bold {
