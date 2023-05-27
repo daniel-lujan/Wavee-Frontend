@@ -1,18 +1,9 @@
-import { useState } from "react";
-import Icon from "./icons/Icon";
 import "./SongsList.css";
-import ScoreBox from "./ScoreBox";
-import ProgressBar from "./ProgressBar";
+import Icon from "./icons/Icon";
 
-const Song = ({ id, title, artist, cover, spotifyLink, score, highlight }) => {
-  const [hover, setHover] = useState(false);
-
+const Song = ({ id, title, artist, cover, score, highlight }) => {
   return (
-    <div
-      className={`song-record${hover ? " spotify" : ""}${
-        highlight ? " highlight" : ""
-      }`}
-    >
+    <div className={`song-record${highlight ? " highlight" : ""}`}>
       <div className="song-content">
         <img className="song-cover" src={cover} alt={title} />
         <div className="song-info">
@@ -28,24 +19,13 @@ const Song = ({ id, title, artist, cover, spotifyLink, score, highlight }) => {
           display: "flex",
           alignItems: "center",
           gap: "10px",
+          marginRight: "16px",
         }}
       >
-        {/* {score && <ScoreBox score={score} />} */}
-        {score && <ProgressBar percentage={score} />}
-        <a
-          href={spotifyLink}
-          target="_blank"
-          rel="noreferrer"
-          style={{ lineHeight: 0 }}
-        >
-          <Icon
-            icon="spotify"
-            className="spotify-icon"
-            size={36}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
-          />
-        </a>
+        {highlight && (
+          <Icon icon="awardFilled" style={{ color: "var(--spotify-color)" }} />
+        )}
+        {score ?? null}
       </div>
     </div>
   );
