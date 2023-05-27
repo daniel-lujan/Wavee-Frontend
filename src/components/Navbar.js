@@ -3,6 +3,7 @@ import Icon from "./icons/Icon";
 import "./Navbar.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { SLIDERIGHT, SLIDEUP } from "./animations/framer-animations";
+import { PLAYLIST_URL } from "../api/songsDB";
 
 const MenuItem = ({ icon, text, href }) => {
   return (
@@ -33,7 +34,11 @@ const Menu = ({ children, className }) => {
 const RepoMenu = () => {
   return (
     <Menu className="repositories">
-      <MenuItem icon="notebook" text="Music Identification Notebook" />
+      <MenuItem
+        icon="notebook"
+        text="Music Identification Notebook"
+        href="https://colab.research.google.com/drive/1w5HK-IM3Xicz4tUH1ZckwTCUDeDXX-Ln"
+      />
       <MenuItem icon="python" text="Flask Server" />
       <MenuItem icon="react" text="React App" />
     </Menu>
@@ -44,9 +49,14 @@ const BibliographyMenu = () => {
   return (
     <Menu className="bibliography">
       <MenuItem
-        icon="book"
+        icon="fileDescription"
         text="An Industrial-Strength Audio Search Algorithm"
         href="https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf"
+      />
+      <MenuItem
+        icon="fileDescription"
+        text="Audio Content-Based Music Retrieval"
+        href="https://www.audiolabs-erlangen.de/content/05-fau/professor/00-mueller/03-publications/2012_GroscheMuellerSerra_ContentBasedRetrieval_DagstuhlFU.pdf"
       />
       <MenuItem
         icon="book"
@@ -65,7 +75,14 @@ const Navbar = () => {
       <header>
         <p className="thin title">DEMO</p>
         <div className="links">
-          <Icon icon="playlist" className="link-icon" />
+          <a
+            className="icon"
+            href={PLAYLIST_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon icon="playlist" className="link-icon" />
+          </a>
           <Icon
             icon="books"
             className="link-icon"
