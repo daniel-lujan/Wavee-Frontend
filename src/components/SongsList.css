@@ -40,7 +40,7 @@ div.song-record {
   position: relative;
   display: flex;
   justify-content: space-between;
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: #fff;
   padding: 20px;
   width: 100%;
@@ -54,7 +54,7 @@ div.song-record {
 div.song-record p {
   margin: 0;
   padding: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 div.song-content {
@@ -84,6 +84,6 @@ svg.spotify-icon:hover {
   cursor: pointer;
 }
 
-.song-record.spotify {
+.song-record:hover {
   box-shadow: rgba(0, 102, 14, 0.4) 0px 3px 8px;
 }
