@@ -1,3 +1,5 @@
+const API = process.env.REACT_APP_API;
+
 export async function sendAudioQuery({ blob, blobCleanerCallback }) {
   const formData = new FormData();
   formData.append("audio", blob, "audio.wav");
@@ -6,7 +8,7 @@ export async function sendAudioQuery({ blob, blobCleanerCallback }) {
     blobCleanerCallback();
   } catch {}
 
-  const response = await fetch("http://localhost:5000/query-song", {
+  const response = await fetch(`${API}query-song`, {
     method: "POST",
     body: formData,
   });
