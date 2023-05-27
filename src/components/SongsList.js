@@ -1,5 +1,5 @@
 import "./SongsList.css";
-import { SONGS } from "../api/songsDB";
+import { PLAYLIST_URL, SONGS } from "../api/songsDB";
 import Song from "./Song";
 
 const SongsList = () => {
@@ -8,7 +8,7 @@ const SongsList = () => {
       <h1 className="thin title">
         <a
           className="highlight"
-          href="https://spotify.com"
+          href={PLAYLIST_URL}
           target="_blank"
           rel="noreferrer"
         >
