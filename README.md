@@ -10,5 +10,4 @@ root@user:~$ cd Wavee-Frontend
 root@user:~$ npm install
 root@user:~$ npm start
 ```
-Go to `https://localhost:3000` to see de application.
-> <font color="#ff2a00">**Note**: </font> The app will be served through HTTPS with a self-signed certificate, so you will likely see a security warning. This is because the app makes use of microphone which is only allowed in Secure Contexts (see [here](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)).
+Go to `http://localhost:3000` to see de application.
