@@ -4,6 +4,7 @@ import "./Navbar.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { SLIDERIGHT, SLIDEUP } from "./animations/framer-animations";
 import { PLAYLIST_URL } from "../api/songsDB";
+import logo from "../assets/wavee-icon.png";
 
 const MenuItem = ({ icon, text, href }) => {
   return (
@@ -39,8 +40,16 @@ const RepoMenu = () => {
         text="Music Identification Notebook"
         href="https://colab.research.google.com/drive/1w5HK-IM3Xicz4tUH1ZckwTCUDeDXX-Ln"
       />
-      <MenuItem icon="python" text="Flask Server" />
-      <MenuItem icon="react" text="React App" />
+      <MenuItem
+        icon="python"
+        text="Flask Server"
+        href="https://github.com/daniel-lujan/Wavee-Backend"
+      />
+      <MenuItem
+        icon="react"
+        text="React App"
+        href="https://github.com/daniel-lujan/Wavee-Frontend"
+      />
     </Menu>
   );
 };
@@ -73,7 +82,11 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <p className="thin title">DEMO</p>
+        <div className="logo">
+          <img src={logo} alt="logo" className="logo" />
+          <p className="thin title">Wavee</p>
+        </div>
+
         <div className="links">
           <a
             className="icon"

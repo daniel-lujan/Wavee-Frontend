@@ -5,7 +5,7 @@ header {
   justify-content: space-between;
   color: white;
   align-items: center;
-  padding: 10px calc(20px + 5%);
+  padding: 10px calc(10px + 5%);
   width: 100%;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.4);
@@ -69,4 +69,14 @@ header {
 .menu-item p {
   margin: 0;
   font-size: 12px;
+}
+
+div.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+img.logo {
+  height: 40px;
 }
