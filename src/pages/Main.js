@@ -33,6 +33,7 @@ const Main = () => {
       mimeType: "audio/wav",
       numberOfAudioChannels: 2,
       desiredSampRate: 44100,
+      disableLogs: true,
     });
     recorderRef.current.startRecording();
   }
