@@ -1,3 +1,4 @@
+import ProgressBar from "./ProgressBar";
 import "./SongsList.css";
 import Icon from "./icons/Icon";
 
@@ -25,7 +26,7 @@ const Song = ({ id, title, artist, cover, score, highlight }) => {
         {highlight && (
           <Icon icon="awardFilled" style={{ color: "var(--spotify-color)" }} />
         )}
-        {score ?? null}
+        {score && <ProgressBar percentage={Math.round(score * 100)} />}
       </div>
     </div>
   );
